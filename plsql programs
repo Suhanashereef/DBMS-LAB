@@ -34,7 +34,7 @@ The division of  3  and  4  is  .75
 
 PL/SQL procedure successfully completed.
 
-      
+      LARGEST AMOUNG 3 NUMBERS..
 
 SQL> set serveroutput on
 SQL> declare
@@ -56,6 +56,9 @@ SQL> declare
  17   end if;
  18    end;
  19    /
+
+       OUTPUT
+
 Enter value for number1: 10
 old   6:   x:=&number1;
 new   6:   x:=10;
@@ -68,6 +71,8 @@ new   8:   z:=15;
 y is largest
 
 PL/SQL procedure successfully completed.
+
+LARGEST AMONG THREE NUMBERS ENTERED BY THE USER
 
 SQL> set serveroutput on
 SQL> declare
@@ -87,6 +92,8 @@ SQL> declare
  15    end if;
  16     end;
  17     /
+OUTPUT
+
 Enter value for number1: 12
 old   6:    x:=&number1;
 new   6:    x:=12;
