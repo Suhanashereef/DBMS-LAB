@@ -114,4 +114,14 @@ mysql> select mgr, COUNT(empno) AS num_employees from emp group by mgr order by 
 +----------+---------------+
 1 row in set (0.01 sec)
 
-mysql>
+mysql>mysql> select * from emp mgrView;
++----------------+--------------+
+| ename          | mgr          |
++----------------+--------------+
+| aparna         | manager1     |
+| ahana          | manager2     |
+| vishnu         | manager1     |
+| krishna        | manager2     |
++----------------+--------------+
+4 rows in set (0.06 sec)
+
