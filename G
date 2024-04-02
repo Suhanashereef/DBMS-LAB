@@ -22,22 +22,8 @@ mysql> create table emp(empno int,ename varchar(60),job varchar(30),mgr varchar(
 0,2),comm decimal(10,2),deptno int);
 Query OK, 0 rows affected (0.03 sec)
 
-mysql> insert into emp values(1,'aparna','data analyst','manager 1','2002-05-12',60000,1000,2);
-ERROR 1366 (HY000): Incorrect decimal value: '2002-05-12' for column 'hiredate' at row 1
 mysql> create table empp(empno int,ename varchar(60),job varchar(30),mgr varchar(40),hiredate decimal(10,2),sal decimal(
 10,2),comm decimal(10,2),deptno int);
-Query OK, 0 rows affected (0.02 sec)
-
-mysql> create table Emp(empno int,ename varchar(60),job varchar(30),mgr varchar(40),hiredate date,sal decimal(10,2),comm
- decimal(10,2),deptno int);
-ERROR 1050 (42S01): Table 'emp' already exists
-mysql> create table Emp1(empno int,ename varchar(60),job varchar(30),mgr varchar(40),hiredate date,sal decimal(10,2),com
-m decimal(10,2),deptno int);
-Query OK, 0 rows affected (0.02 sec)
-
-mysql> insert into emp values(1,'aparna','data analyst','manager 1','2002-05-12',60000,1000,2);
-ERROR 1366 (HY000): Incorrect decimal value: '2002-05-12' for column 'hiredate' at row 1
-mysql> drop table emp;
 Query OK, 0 rows affected (0.02 sec)
 
 mysql> create table emp(empno int,ename varchar(60),job varchar(30),mgr varchar(40),hiredate DATE,sal decimal(10,2),comm
@@ -83,10 +69,6 @@ mysql> select * from emp;
 +-------+---------+--------------+----------+------------+-----------+---------+--------+
 5 rows in set (0.01 sec)
 
-mysql> update emp set sal=sal*1.15 where hiredate<CURDATE()-interval 30 year;
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 0  Changed: 0  Warnings: 0
-
 mysql> update emp set sal=sal*1.15 where hiredate<CURDATE()-interval 10 year;
 Query OK, 3 rows affected (0.01 sec)
 Rows matched: 3  Changed: 3  Warnings: 0
@@ -124,10 +106,6 @@ mysql> select * from emp;
 +-------+---------+--------------+----------+------------+-----------+---------+--------+
 4 rows in set (0.00 sec)
 
-mysql> select mgr, COUNT(empno) AS num_employees from emp group by mgr order bt
-    -> select mgr, COUNT(empno) AS num_employees from emp group by mgr order b;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bt
-select mgr, COUNT(empno) AS num_employees from emp group by mgr order b' at line 1
 mysql> select mgr, COUNT(empno) AS num_employees from emp group by mgr order by  num_employees desc limit 1;
 +----------+---------------+
 | mgr      | num_employees |
