@@ -57,11 +57,10 @@ SQL> declare
  14  close c_customers;
  15  end;
  16  /
-
-    OUTPUT
 1 sneha 35000
 2 diya 85000
 3 ahana 95000
 4 neha 75000
 
 PL/SQL procedure successfully completed.
+SQL>
