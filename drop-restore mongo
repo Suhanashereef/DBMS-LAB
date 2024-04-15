@@ -1,0 +1,93 @@
+mca> use college;
+switched to db college
+college> db.createCollection("course");
+{ ok: 1 }
+college> db.details.insertMany([{cid:1,cname:"mca",dpmt:"cs",cavg:50},{cid:2,cname:"mba",dpmt:"mba",cavg:80},{cid:3,cname:"Ai",dpmt:"civil",cavg:70}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('661cf6fa666604d8fe8bf208'),
+    '1': ObjectId('661cf6fa666604d8fe8bf209'),
+    '2': ObjectId('661cf6fa666604d8fe8bf20a')
+  }
+}
+college> db.details.find();
+[
+  {
+    _id: ObjectId('661cf6fa666604d8fe8bf208'),
+    cid: 1,
+    cname: 'mca',
+    dpmt: 'cs',
+    cavg: 50
+  },
+  {
+    _id: ObjectId('661cf6fa666604d8fe8bf209'),
+    cid: 2,
+    cname: 'mba',
+    dpmt: 'mba',
+    cavg: 80
+  },
+  {
+    _id: ObjectId('661cf6fa666604d8fe8bf20a'),
+    cid: 3,
+    cname: 'Ai',
+    dpmt: 'civil',
+    cavg: 70
+  }
+]
+college> show dbs
+admin       40.00 KiB
+college     96.00 KiB
+config      96.00 KiB
+local       72.00 KiB
+mca         84.00 KiB
+mlm         72.00 KiB
+std         72.00 KiB
+stod        72.00 KiB
+stud         8.00 KiB
+university  72.00 KiB
+college> show collections
+course
+details
+s2mca
+stud
+college> db.dropDatabase();
+{ ok: 1, dropped: 'college' }
+college> show dbs
+admin       40.00 KiB
+config      96.00 KiB
+local       72.00 KiB
+mca         84.00 KiB
+mlm         72.00 KiB
+std         72.00 KiB
+stod        72.00 KiB
+stud         8.00 KiB
+university  72.00 KiB
+college> show dbs
+admin        40.00 KiB
+college     128.00 KiB
+config       96.00 KiB
+local        72.00 KiB
+mca          84.00 KiB
+mlm          72.00 KiB
+std          72.00 KiB
+stod         72.00 KiB
+stud          8.00 KiB
+university   72.00 KiB
+college> show collections
+course
+details
+s2mca
+stud
+college> db.stud.drop();
+true
+college> show collections
+course
+details
+s2mca
+college> show collections
+course
+details
+s2mca
+stud
+college>
